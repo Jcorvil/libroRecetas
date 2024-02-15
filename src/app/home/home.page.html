@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Ejemplo Tareas </ion-title>
+    <ion-title> Libro de recetas </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Libro de recetas</ion-title>
+      <ion-title size="large" class="titulo">Libro de recetas</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -27,7 +27,11 @@
     </ion-list>
   </div>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button class="campoEntrada" [routerLink]="['/detalle/nuevo']">
+    <ion-fab-button
+      id="botonAdd"
+      class="campoEntrada"
+      [routerLink]="['/detalle/nuevo']"
+    >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

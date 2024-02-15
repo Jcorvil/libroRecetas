@@ -1,19 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Detalles de la tarea</ion-title>
+    <ion-title>Detalles del plato</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Detalles de la tarea</ion-title>
+      <ion-title size="large">Detalles del plato</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <br />
   <br />
-  <ion-button class="botonVolver" [routerLink]="['/home']">Volver</ion-button>
+  <ion-button color="secondary" class="botonVolver" [routerLink]="['/home']"
+    >Volver</ion-button
+  >
   <br />
   <br />
 
@@ -24,49 +26,69 @@
   <ion-input [(ngModel)]="document.data.titulo"></ion-input>
 
   <br />
-  
+
   <h3>Ingredientes</h3>
-  <ion-input [(ngModel)]="document.data.ingredientes"></ion-input>
- 
+  <ion-textarea
+    rows="6"
+    [(ngModel)]="document.data.ingredientes"
+  ></ion-textarea>
+
   <br />
   <h3>Elaboración</h3>
-  <ion-input [(ngModel)]="document.data.elaboracion"></ion-input>
+  <ion-textarea rows="6" [(ngModel)]="document.data.elaboracion"></ion-textarea>
 
   <ion-button
-    *ngIf="!creandoNuevaReceta"
-    class="borrarReceta"
-    (click)="clickBotonBorrar()"
-    [routerLink]="['/home']"
-    >Borrar Tarea</ion-button
-  >
-  <ion-button
+    fill="outline"
+    id="botonModificar"
     *ngIf="!creandoNuevaReceta"
     class="modificarReceta"
     (click)="clickBotonModificar()"
     [routerLink]="['/home']"
-    >Modificar Tarea</ion-button
+    >Modificar</ion-button
   >
   <ion-button
+    fill="outline"
+    id="botonInsertar"
     *ngIf="creandoNuevaReceta"
     class="añadirReceta"
     (click)="clickBotonInsertar()"
     [routerLink]="['/home']"
-    >Añadir Tarea</ion-button
+    >Añadir</ion-button
+  >
+
+  <ion-button
+    fill="outline"
+    color="danger"
+    id="botonBorrar"
+    *ngIf="!creandoNuevaReceta"
+    class="borrarReceta"
+    (click)="clickBotonBorrar()"
+    [routerLink]="['/home']"
+    >Borrar</ion-button
   >
 
   <hr />
   <hr />
 
   <h4>Imagen</h4>
-  <ion-button class="seleccionarImagen" (click)="seleccionarImagen()"
+  <ion-button
+    fill="outline"
+    class="seleccionarImagen"
+    (click)="seleccionarImagen()"
     >Seleccionar</ion-button
   >
-  <ion-button class="subirImagen" (click)="subirImagen()" *ngIf="imagenSelect"
+  <ion-button
+    fill="outline"
+    class="subirImagen"
+    (click)="subirImagen()"
+    *ngIf="imagenSelect"
     >Subir</ion-button
   >
 
   <ion-button
     class="elimImagen"
+    color="danger"
+    fill="outline"
     (click)="eliminarArchivo(document.data.downloadURL)"
     >Borrar</ion-button
   >
