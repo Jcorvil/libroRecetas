@@ -4,6 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
+html Copy code
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -13,18 +14,19 @@
 
   <div id="container">
     <h1>LISTA DE RECETAS</h1>
-    <ion-list>
-      <ion-item
-        *ngFor="let documentReceta of arrayColeccionRecetas"
-        (click)="selecReceta(documentReceta.id, documentReceta.receta)"
-      >
-        <ion-grid>
-          <ion-row>
-            <h2>{{documentReceta.receta.titulo}}</h2>
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-    </ion-list>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="4" *ngFor="let documentReceta of arrayColeccionRecetas">
+          <ion-card
+            (click)="selecReceta(documentReceta.id, documentReceta.receta)"
+          >
+            <ion-card-header>
+              <ion-card-title>{{documentReceta.receta.titulo}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
     <ion-fab-button
