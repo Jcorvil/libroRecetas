@@ -7,15 +7,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Detalles del plato</ion-title>
+      <ion-title size="large">Detalles del plato </ion-title>
     </ion-toolbar>
   </ion-header>
 
   <br />
   <br />
-  <ion-button color="secondary" class="botonVolver" [routerLink]="['/home']"
-    >Volver</ion-button
-  >
+
+  <ion-fab slot="fixed" horizontal="left" vertical="top">
+    <ion-fab-button
+      color="secondary"
+      id="botonVolver"
+      size="large"
+      [routerLink]="['/home']"
+    >
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <br />
   <br />
 

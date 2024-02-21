@@ -11,3 +11,33 @@ hr {
   background-color: white;
 }
 
+ion-fab {
+  margin-left: 2em;
+}
+
+* {
+  margin-left: 20px;
+}
+
+hr,
+ion-header,
+ion-toolbar,
+ion-icon {
+  margin-left: 0;
+}
+
+ion-input,
+ion-textarea {
+  background-color: rgba(173, 173, 173, 0.233);
+  border-radius: 10px;
+  padding-left: 1em;
+  width: 40%;
+}
+
+
+#botonModificar,
+#botonInsertar,
+#botonBorrar{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
