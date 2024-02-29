@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Receta } from '../receta';
 import { FirestoreService } from '../firestore.service';
 import { Router } from '@angular/router';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomePage {
   idrecetaSelec: string = "";
 
 
-  constructor(private firestoreService: FirestoreService, private router: Router) {
+  constructor(private firestoreService: FirestoreService, private router: Router, private SocialSharing: SocialSharing) {
     this.obtenerListarecetas();
   }
 
@@ -63,5 +64,19 @@ export class HomePage {
     this.router.navigate(['detalle', 'nuevo']);
   }
 
+  share() {
+    this.SocialSharing.share(
+      'Mensajte',
+      'Asunto',
+      "Archivo",
+      'https://www.example.com'
+    )
+      .then(() => {
+        console.log('Compartido con éxito');
+      })
+      .catch((error) => {
+        console.error('Error al compartir', error);
+      });
+  }
 
 }
