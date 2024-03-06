@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
 }
 
@@ -57,15 +57,25 @@ ion-fab {
   margin-right: 2em;
 }
 
+// ----------ESTILOS PARA MÓVIL----------
+
 @media (max-width: 676px) {
+  #container {
+    top: 50%;
+  }
 
   #botonAdd {
-    margin-bottom: 2em;
-    margin-right: 2em;
+    margin-bottom: 1em;
+    margin-right: 1em;
   }
-  
+
   #botonCompartir {
-    margin-bottom: 2em;
-    margin-left: 2em;
+    margin-bottom: 1em;
+    margin-right: 6em;
+  }
+
+  #listaRecetas {
+    display: inline-block;
+    width: 60%;
   }
 }

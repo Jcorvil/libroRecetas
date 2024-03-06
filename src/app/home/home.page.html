@@ -8,7 +8,7 @@
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home">
-        <ion-icon name="triangle"></ion-icon>
+        <ion-icon name="home"></ion-icon>
         <ion-label>Inicio</ion-label>
       </ion-tab-button>
 
@@ -29,9 +29,9 @@
 
   <div id="container">
     <h1>LISTA DE RECETAS</h1>
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="4" *ngFor="let documentReceta of arrayColeccionRecetas">
+    <ion-grid>
+      <ion-row id="listaRecetas">
+        <ion-col *ngFor="let documentReceta of arrayColeccionRecetas">
           <ion-card
             (click)="selecReceta(documentReceta.id, documentReceta.receta)"
           >
@@ -43,7 +43,8 @@
       </ion-row>
     </ion-grid>
   </div>
-  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+
+  <ion-fab horizontal="end" vertical="bottom">
     <ion-fab-button
       id="botonAdd"
       class="campoEntrada"
@@ -53,7 +54,7 @@
     </ion-fab-button>
   </ion-fab>
 
-  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab horizontal="end" vertical="bottom">
     <ion-fab-button id="botonCompartir" (click)="share()">
       <ion-icon name="share-social-outline"></ion-icon>
     </ion-fab-button>
