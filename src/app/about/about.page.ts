@@ -16,7 +16,7 @@ export class AboutPage implements OnInit {
   ngOnInit() { }
 
   llamadaTel(): void {
-    const phoneNumber = '603551622';
+    const phoneNumber = '+34603551622';
     this.callNumber
       .callNumber(phoneNumber, true)
       .then(() => console.log('Llamando...'))
