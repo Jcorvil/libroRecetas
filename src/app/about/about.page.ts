@@ -17,6 +17,7 @@ export class AboutPage implements OnInit {
 
   llamadaTel(): void {
     const phoneNumber = '+34603551622';
+
     this.callNumber
       .callNumber(phoneNumber, true)
       .then(() => console.log('Llamando...'))
@@ -30,12 +31,19 @@ export class AboutPage implements OnInit {
   }
 
   loadMap() {
-    let latitud = 36.6797047;
-    let longitud = -5.4470656;
+    let latitud = 36.67960000176995;
+    let longitud = -5.444742730913387;
     let zoom = 17;
     this.map = L.map("mapId").setView([latitud, longitud], zoom);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
       .addTo(this.map);
+      // Añade un marcador en la ubicación
+    L.marker([latitud, longitud]).addTo(this.map);
+    // Añade un bloque de texto en la ubicación
+    L.popup()
+      .setLatLng([latitud, longitud])
+      .setContent('IES Nstra. Sra. de los Remedios. <br> Lugar de creación de la app.')
+      .openOn(this.map);
   }
 
 }
